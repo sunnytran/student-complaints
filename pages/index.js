@@ -1,5 +1,6 @@
 
 import Head from 'next/head'
+import Dropdown from '../components/Dropdown'
 
 class Index extends React.Component {
 
@@ -7,34 +8,16 @@ class Index extends React.Component {
     super(props);
 
     this.state = {
-      complaints: {
-        isActive: false,
-        label: "Complaint",
-        list: [
-          "Racist remarks",
-          "Misconduct",
-          "Sexual harassment"
-        ]
-      },
-      schools: {
-        isActive: false,
-        label: "School",
-        list: [
-          "University of Houston",
-          "University of Texas (Austin)"
-        ]
-      }
+      schools: [
+        "University of Houston",
+        "University of Texas"
+      ],
+      complaints: [
+        "Racist remarks",
+        "Misconduct",
+        "Sexual harassment"
+      ]
     }
-  }
-
-  toggleDropdown(dropdown) {
-    dropdown.isActive = !dropdown.isActive;
-    this.setState({dropdown: dropdown});
-  }
-
-  setDropdownLabel(dropdown, label) {
-    dropdown.label = label;
-    this.setState({dropdown: dropdown});
   }
 
   render() {
@@ -59,59 +42,8 @@ class Index extends React.Component {
               <div class="card-content">
                 <div class="content">
   
-                  <div class={"dropdown" + (this.state.schools.isActive ? " is-active" : "")}>
-                    <div class="dropdown-trigger">
-                      <button class="button" aria-haspopup="true" aria-controls="dropdown-menu" onClick={() => this.toggleDropdown(this.state.schools)}>
-                        <span>{this.state.schools.label}</span>
-                        <span class="icon is-small">
-                          <i class="fas fa-angle-down" aria-hidden="true"></i>
-                        </span>
-                      </button>
-                    </div>
-                    <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                      <div class="dropdown-content">
-                        {
-                          this.state.schools.list.map(i => {
-                            return (
-                              <a href="#" class="dropdown-item" onClick={() => {
-                                  this.toggleDropdown(this.state.schools);
-                                  this.setDropdownLabel(this.state.schools, i);
-                              }}>
-                                {i}
-                              </a>
-                            );
-                          })
-                        }
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class={"dropdown" + (this.state.complaints.isActive ? " is-active" : "")}>
-                    <div class="dropdown-trigger">
-                      <button class="button" aria-haspopup="true" aria-controls="dropdown-menu" onClick={() => this.toggleDropdown(this.state.complaints)}>
-                        <span>{this.state.complaints.label}</span>
-                        <span class="icon is-small">
-                          <i class="fas fa-angle-down" aria-hidden="true"></i>
-                        </span>
-                      </button>
-                    </div>
-                    <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                      <div class="dropdown-content">
-                        {
-                          this.state.complaints.list.map(i => {
-                            return (
-                              <a href="#" class="dropdown-item" onClick={() => {
-                                  this.toggleDropdown(this.state.complaints);
-                                  this.setDropdownLabel(this.state.complaints, i);
-                              }}>
-                                {i}
-                              </a>
-                            );
-                          })
-                        }
-                      </div>
-                    </div>
-                  </div>
+                  <Dropdown label="School" list={this.state.schools}></Dropdown>
+                  <Dropdown label="Complaint" list={this.state.complaints}></Dropdown>
 
                 </div>
               </div>
@@ -129,3 +61,30 @@ class Index extends React.Component {
 }
 
 export default Index;
+
+{/* <div class={"dropdown" + (this.state.complaints.isActive ? " is-active" : "")}>
+<div class="dropdown-trigger">
+  <button class="button" aria-haspopup="true" aria-controls="dropdown-menu" onClick={() => this.toggleDropdown(this.state.complaints)}>
+    <span>{this.state.complaints.label}</span>
+    <span class="icon is-small">
+      <i class="fas fa-angle-down" aria-hidden="true"></i>
+    </span>
+  </button>
+</div>
+<div class="dropdown-menu" id="dropdown-menu" role="menu">
+  <div class="dropdown-content">
+    {
+      this.state.complaints.list.map(i => {
+        return (
+          <a href="#" class="dropdown-item" onClick={() => {
+              this.toggleDropdown(this.state.complaints);
+              this.setDropdownLabel(this.state.complaints, i);
+          }}>
+            {i}
+          </a>
+        );
+      })
+    }
+  </div>
+</div>
+</div> */}
