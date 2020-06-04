@@ -7,22 +7,34 @@ class Index extends React.Component {
     super(props);
 
     this.state = {
-      complaintsIsActive: false,
-      complaintLabel: "Complaint",
-      complaints: [
-        "Racist remarks",
-        "Misconduct",
-        "Sexual harassment"
-      ]
+      complaints: {
+        isActive: false,
+        label: "Complaint",
+        list: [
+          "Racist remarks",
+          "Misconduct",
+          "Sexual harassment"
+        ]
+      },
+      schools: {
+        isActive: false,
+        label: "School",
+        list: [
+          "University of Houston",
+          "University of Texas (Austin)"
+        ]
+      }
     }
   }
 
-  toggleComplaints() {
-    this.setState({complaintsIsActive: !this.state.complaintsIsActive});
+  toggleDropdown(dropdown) {
+    dropdown.isActive = !dropdown.isActive;
+    this.setState({dropdown: dropdown});
   }
 
-  setComplaintLabel(i) {
-    this.setState({complaintLabel: i});
+  setDropdownLabel(dropdown, label) {
+    dropdown.label = label;
+    this.setState({dropdown: dropdown});
   }
 
   render() {
@@ -47,10 +59,10 @@ class Index extends React.Component {
               <div class="card-content">
                 <div class="content">
   
-                  <div class={"dropdown" + (this.state.complaintsIsActive ? " is-active" : "")}>
+                  <div class={"dropdown" + (this.state.schools.isActive ? " is-active" : "")}>
                     <div class="dropdown-trigger">
-                      <button class="button" aria-haspopup="true" aria-controls="dropdown-menu" onClick={() => this.toggleComplaints()}>
-                        <span>{this.state.complaintLabel}</span>
+                      <button class="button" aria-haspopup="true" aria-controls="dropdown-menu" onClick={() => this.toggleDropdown(this.state.schools)}>
+                        <span>{this.state.schools.label}</span>
                         <span class="icon is-small">
                           <i class="fas fa-angle-down" aria-hidden="true"></i>
                         </span>
@@ -59,11 +71,11 @@ class Index extends React.Component {
                     <div class="dropdown-menu" id="dropdown-menu" role="menu">
                       <div class="dropdown-content">
                         {
-                          this.state.complaints.map(i => {
+                          this.state.schools.list.map(i => {
                             return (
                               <a href="#" class="dropdown-item" onClick={() => {
-                                  this.toggleComplaints();
-                                  this.setComplaintLabel(i);
+                                  this.toggleDropdown(this.state.schools);
+                                  this.setDropdownLabel(this.state.schools, i);
                               }}>
                                 {i}
                               </a>
@@ -73,7 +85,34 @@ class Index extends React.Component {
                       </div>
                     </div>
                   </div>
-  
+
+                  <div class={"dropdown" + (this.state.complaints.isActive ? " is-active" : "")}>
+                    <div class="dropdown-trigger">
+                      <button class="button" aria-haspopup="true" aria-controls="dropdown-menu" onClick={() => this.toggleDropdown(this.state.complaints)}>
+                        <span>{this.state.complaints.label}</span>
+                        <span class="icon is-small">
+                          <i class="fas fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                      </button>
+                    </div>
+                    <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                      <div class="dropdown-content">
+                        {
+                          this.state.complaints.list.map(i => {
+                            return (
+                              <a href="#" class="dropdown-item" onClick={() => {
+                                  this.toggleDropdown(this.state.complaints);
+                                  this.setDropdownLabel(this.state.complaints, i);
+                              }}>
+                                {i}
+                              </a>
+                            );
+                          })
+                        }
+                      </div>
+                    </div>
+                  </div>
+
                 </div>
               </div>
             </div>
