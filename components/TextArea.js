@@ -7,10 +7,17 @@ class TextArea extends React.Component {
 
     render() {
         return (
-            <div class="field">
+          <div class="field">
             <label class="label">{this.props.label}</label>
               <div class="control">
-                <textarea class="textarea is-medium" disabled={this.props.disabled}></textarea>
+                <style jsx>{`
+                  textarea {
+                    resize: none;
+                    width: 100%
+                  }
+                `}</style>
+
+                <textarea rows="10" disabled={this.props.disabled}></textarea>
               </div>
           </div>
         );

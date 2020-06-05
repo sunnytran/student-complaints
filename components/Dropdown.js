@@ -11,7 +11,7 @@ class Dropdown extends React.Component {
 
     render() {
         return (
-          <div class="select is-rounded is-fullwidth">
+          <div class="select is-fullwidth">
             <select>
               <option value="" disabled selected>{this.props.label}</option>
               {

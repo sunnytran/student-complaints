@@ -33,8 +33,8 @@ class Index extends React.Component {
           <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css"></link>
           <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"></link>
         </Head>
-  
-        <div class="columns is-centered">
+
+        <div class="columns is-flex is-vcentered is-centered">
           <div class="column is-half">
   
             <div class="card">
