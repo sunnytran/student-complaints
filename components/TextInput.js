@@ -7,10 +7,8 @@ class TextInput extends React.Component {
 
     render() {
         return (
-            <div class="field">
-                <div class="control">
-                    <input class="input is-rounded" type="text" placeholder={this.props.label}></input>
-                </div>
+            <div class="control">
+                <input class="input is-rounded" type="text" placeholder={this.props.label}></input>
             </div>
         );
     }

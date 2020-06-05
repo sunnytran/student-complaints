@@ -44,19 +44,29 @@ class Index extends React.Component {
               <div class="card-content">
                 <div class="content">
   
-                  <EmailStyledField>
+                  <EmailStyledField label="To:">
                     <Dropdown label="School" list={this.state.schools}></Dropdown>
                   </EmailStyledField>
-                  <EmailStyledField>
+
+                  <EmailStyledField label="About:">
                     <TextInput label="Student name"></TextInput>
                   </EmailStyledField>
-                  <EmailStyledField>
+                  <EmailStyledField label="Subject:">
                     <Dropdown label="Complaint" list={this.state.complaints}></Dropdown>
                   </EmailStyledField>
 
-                  <button class="button is-link">
-                    Generate
-                  </button>
+                  <div class="field">
+                    <label class="label">Message</label>
+                      <div class="control">
+                        <textarea class="textarea is-medium" disabled></textarea>
+                      </div>
+                  </div>
+
+                  <div class="buttons is-right">
+                    <button class="button is-link">
+                      Generate
+                    </button>
+                  </div>
 
                 </div>
               </div>
