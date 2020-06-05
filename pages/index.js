@@ -3,6 +3,8 @@ import Head from 'next/head'
 import Dropdown from '../components/Dropdown'
 import TextInput from '../components/TextInput'
 import EmailStyledField from '../components/EmailStyledField';
+import TextArea from '../components/TextArea';
+import Generate from './generate';
 
 class Index extends React.Component {
 
@@ -43,31 +45,7 @@ class Index extends React.Component {
               </header>
               <div class="card-content">
                 <div class="content">
-  
-                  <EmailStyledField label="To:">
-                    <Dropdown label="School" list={this.state.schools}></Dropdown>
-                  </EmailStyledField>
-
-                  <EmailStyledField label="About:">
-                    <TextInput label="Student name"></TextInput>
-                  </EmailStyledField>
-                  <EmailStyledField label="Subject:">
-                    <Dropdown label="Complaint" list={this.state.complaints}></Dropdown>
-                  </EmailStyledField>
-
-                  <div class="field">
-                    <label class="label">Message</label>
-                      <div class="control">
-                        <textarea class="textarea is-medium" disabled></textarea>
-                      </div>
-                  </div>
-
-                  <div class="buttons is-right">
-                    <button class="button is-link">
-                      Generate
-                    </button>
-                  </div>
-
+                  <Generate></Generate>
                 </div>
               </div>
             </div>
