@@ -1,6 +1,8 @@
 
 import Head from 'next/head'
 import Dropdown from '../components/Dropdown'
+import TextInput from '../components/TextInput'
+import EmailStyledField from '../components/EmailStyledField';
 
 class Index extends React.Component {
 
@@ -42,8 +44,19 @@ class Index extends React.Component {
               <div class="card-content">
                 <div class="content">
   
-                  <Dropdown label="School" list={this.state.schools}></Dropdown>
-                  <Dropdown label="Complaint" list={this.state.complaints}></Dropdown>
+                  <EmailStyledField>
+                    <Dropdown label="School" list={this.state.schools}></Dropdown>
+                  </EmailStyledField>
+                  <EmailStyledField>
+                    <TextInput label="Student name"></TextInput>
+                  </EmailStyledField>
+                  <EmailStyledField>
+                    <Dropdown label="Complaint" list={this.state.complaints}></Dropdown>
+                  </EmailStyledField>
+
+                  <button class="button is-link">
+                    Generate
+                  </button>
 
                 </div>
               </div>

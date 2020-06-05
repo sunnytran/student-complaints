@@ -11,19 +11,21 @@ class Dropdown extends React.Component {
 
     render() {
         return (
-          <div class="select is-rounded">
-            <select>
-              <option value="" disabled selected>{this.props.label}</option>
-              {
-                this.state.list.map(i => {
-                  return (
-                    <option value={i}>
-                      {i}
-                    </option>
-                  );
-                })
-              }
-            </select>
+          <div class="field">
+            <div class="select is-rounded is-fullwidth">
+              <select>
+                <option value="" disabled selected>{this.props.label}</option>
+                {
+                  this.state.list.map(i => {
+                    return (
+                      <option value={i}>
+                        {i}
+                      </option>
+                    );
+                  })
+                }
+              </select>
+            </div>
           </div>
         );
     }
