@@ -61,30 +61,3 @@ class Index extends React.Component {
 }
 
 export default Index;
-
-{/* <div class={"dropdown" + (this.state.complaints.isActive ? " is-active" : "")}>
-<div class="dropdown-trigger">
-  <button class="button" aria-haspopup="true" aria-controls="dropdown-menu" onClick={() => this.toggleDropdown(this.state.complaints)}>
-    <span>{this.state.complaints.label}</span>
-    <span class="icon is-small">
-      <i class="fas fa-angle-down" aria-hidden="true"></i>
-    </span>
-  </button>
-</div>
-<div class="dropdown-menu" id="dropdown-menu" role="menu">
-  <div class="dropdown-content">
-    {
-      this.state.complaints.list.map(i => {
-        return (
-          <a href="#" class="dropdown-item" onClick={() => {
-              this.toggleDropdown(this.state.complaints);
-              this.setDropdownLabel(this.state.complaints, i);
-          }}>
-            {i}
-          </a>
-        );
-      })
-    }
-  </div>
-</div>
-</div> */}
