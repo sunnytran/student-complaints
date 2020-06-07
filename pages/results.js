@@ -21,7 +21,24 @@ class Results extends React.Component {
   render() {
     return (
       <div>
-        "Hello"
+        <EmailStyledField label="To:">
+          "List of schools"
+        </EmailStyledField>
+
+        <EmailStyledField label="About:">
+          "Student name"
+        </EmailStyledField>
+        <EmailStyledField label="Subject:">
+          "Complaint"
+        </EmailStyledField>
+
+        <TextArea label="Message" content="Generated message goes here" disabled={true}></TextArea>
+
+        <div class="buttons is-right">
+          <button class="button is-link" onClick={this.handleClick}>
+            Go back
+          </button>
+        </div>
       </div>
     )
   }
