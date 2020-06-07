@@ -20,7 +20,7 @@ class Results extends React.Component {
 
   render() {
     return (
-      <div>
+      <div class="animate__animated animate__slideInRight">
         <EmailStyledField label="To:">
           "List of schools"
         </EmailStyledField>

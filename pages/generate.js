@@ -26,7 +26,7 @@ class Generate extends React.Component {
 
   render() {
     return (
-      <div>
+      <div class="animate__animated animate__slideInLeft">
         <EmailStyledField label="To:">
           <Dropdown label="School" list={this.state.schoolData}></Dropdown>
         </EmailStyledField>
