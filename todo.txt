@@ -1,7 +1,6 @@
-Store json data
+actually pull json data
 make other class "generated"
 Animation going left to right from generate to other class
 actually generate the data
-
 vertical center
 gradient background?

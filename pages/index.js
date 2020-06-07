@@ -12,16 +12,14 @@ class Index extends React.Component {
     super(props);
 
     this.state = {
-      schools: [
-        "University of Houston",
-        "University of Texas"
-      ],
-      complaints: [
-        "Racist remarks",
-        "Misconduct",
-        "Sexual harassment"
-      ]
+      isShowingResults: false
     }
+
+    this.showResults = this.showResults.bind(this);
+  }
+
+  showResults() {
+    alert("HELLO");
   }
 
   render() {
@@ -45,7 +43,8 @@ class Index extends React.Component {
               </header>
               <div class="card-content">
                 <div class="content">
-                  <Generate></Generate>
+
+                  <Generate showResults={this.showResults}></Generate>
                 </div>
               </div>
             </div>
