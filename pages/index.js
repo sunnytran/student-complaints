@@ -1,10 +1,7 @@
 
 import Head from 'next/head'
-import Dropdown from '../components/Dropdown'
-import TextInput from '../components/TextInput'
-import EmailStyledField from '../components/EmailStyledField';
-import TextArea from '../components/TextArea';
 import Generate from './generate';
+import Results from './results';
 
 class Index extends React.Component {
 
@@ -12,7 +9,7 @@ class Index extends React.Component {
     super(props);
 
     this.state = {
-      isShowingResults: true
+      isShowingResults: false
     }
 
     this.togglePages = this.togglePages.bind(this);
@@ -42,8 +39,8 @@ class Index extends React.Component {
               </header>
               <div class="card-content">
                 <div class="content">
-
-                  <Generate togglePages={this.togglePages}></Generate>
+                  { this.state.isShowingResults ? null : <Generate togglePages={this.togglePages}></Generate> }
+                  { this.state.isShowingResults ? <Results></Results> : null }
                 </div>
               </div>
             </div>
