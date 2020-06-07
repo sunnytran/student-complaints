@@ -12,18 +12,17 @@ class Index extends React.Component {
     super(props);
 
     this.state = {
-      isShowingResults: false
+      isShowingResults: true
     }
 
-    this.showResults = this.showResults.bind(this);
+    this.togglePages = this.togglePages.bind(this);
   }
 
-  showResults() {
-    alert("HELLO");
+  togglePages() {
+    this.setState({ isShowingResults: !this.state.isShowingResults });
   }
 
   render() {
-
     return (
       <div>
         <Head>
@@ -44,7 +43,7 @@ class Index extends React.Component {
               <div class="card-content">
                 <div class="content">
 
-                  <Generate showResults={this.showResults}></Generate>
+                  <Generate togglePages={this.togglePages}></Generate>
                 </div>
               </div>
             </div>

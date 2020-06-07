@@ -21,7 +21,7 @@ class Generate extends React.Component {
   }
 
   handleClick() {
-    this.props.showResults();
+    this.props.togglePages();
   }
 
   render() {
