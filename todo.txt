@@ -4,3 +4,5 @@ Animation going left to right from generate to other class
 actually generate the data
 vertical center
 gradient background?
+make sure fields are filled out
+a copy button
