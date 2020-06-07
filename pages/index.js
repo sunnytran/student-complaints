@@ -40,7 +40,7 @@ class Index extends React.Component {
               <div class="card-content">
                 <div class="content">
                   { this.state.isShowingResults ? null : <Generate togglePages={this.togglePages}></Generate> }
-                  { this.state.isShowingResults ? <Results></Results> : null }
+                  { this.state.isShowingResults ? <Results togglePages={this.togglePages}></Results> : null }
                 </div>
               </div>
             </div>

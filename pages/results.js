@@ -11,12 +11,12 @@ class Results extends React.Component {
 
   constructor(props) {
     super(props);
-    // this.handleClick = this.handleClick.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
-//   handleClick() {
-//     this.props.togglePages();
-//   }
+  handleClick() {
+    this.props.togglePages();
+  }
 
   render() {
     return (
