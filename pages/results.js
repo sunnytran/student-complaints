@@ -1,5 +1,4 @@
 
-import Dropdown from '../components/Dropdown'
 import TextCopyField from '../components/TextCopyField'
 import EmailStyledField from '../components/EmailStyledField';
 import TextArea from '../components/TextArea';
@@ -11,11 +10,16 @@ class Results extends React.Component {
 
   constructor(props) {
     super(props);
+
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick() {
     this.props.togglePages();
+  }
+
+  copyToClipboard(field) {
+    document.execCommand('copy');
   }
 
   render() {
