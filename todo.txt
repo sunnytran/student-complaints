@@ -10,3 +10,4 @@ errors notifcations
 a copy button for textarea
 copy to clipboard generated message
 more emails
+copy notification

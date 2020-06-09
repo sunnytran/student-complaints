@@ -16,18 +16,22 @@ class Generate extends React.Component {
       schoolData,
       complaintsData,
       schoolName: "",
+      schoolEmail: "",
       studentName: "",
       complaint: null
     }
 
     this.handleClick = this.handleClick.bind(this);
-    this.setSchoolName = this.setSchoolName.bind(this);
+    this.setSchoolEmail = this.setSchoolEmail.bind(this);
     this.setStudentName = this.setStudentName.bind(this);
     this.setComplaint = this.setComplaint.bind(this);
   }
 
-  setSchoolName(e) {
-    this.setState({schoolName : e.target.value});
+  setSchoolEmail(e) {
+    var tmp = event.target.options.selectedIndex;
+    alert(e.target.options[tmp].getAttribute('key'));
+    
+    this.setState({schoolEmail : e.target.value});
   }
 
   setStudentName(e) {
@@ -40,10 +44,10 @@ class Generate extends React.Component {
   }
 
   handleClick() {
-    if (this.state.studentName == "" || this.state.studentName.length > 20 || this.state.schoolName == "" || this.studentName == "") {
+    if (this.state.studentName == "" || this.state.studentName.length > 20 || this.state.schoolEmail == "" || this.studentName == "") {
       alert("INVALID");
     } else {
-      this.props.setValues(this.state.schoolName, this.state.studentName, this.state.complaint);
+      this.props.setValues(this.state.schoolEmail, this.state.studentName, this.state.complaint);
       this.props.togglePages();
     }
   }
@@ -53,7 +57,7 @@ class Generate extends React.Component {
       <div>
         <div>
           <EmailStyledField label="To:">
-            <Dropdown label="School" list={this.state.schoolData} setValue={this.setSchoolName}></Dropdown>
+            <Dropdown label="School" list={this.state.schoolData} setValue={this.setSchoolEmail}></Dropdown>
           </EmailStyledField>
 
           <EmailStyledField label="About:">
