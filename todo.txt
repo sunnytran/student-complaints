@@ -1,8 +1,13 @@
 actually generate the data
 vertical center
+
+font hard to see for results fields
+
 gradient background?
 
 might need to go back to bulma messasge box, i don't like the font
 errors
 copy to clipboard
 a copy button for textarea
+
+more emails

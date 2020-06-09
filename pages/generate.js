@@ -17,7 +17,7 @@ class Generate extends React.Component {
       complaintsData,
       schoolName: "",
       studentName: "",
-      complaint: ""
+      complaint: null
     }
 
     this.handleClick = this.handleClick.bind(this);
@@ -37,7 +37,7 @@ class Generate extends React.Component {
   setComplaint(e) {
     var tmp = e.target.value;
     this.setState({complaint : e.target.value});
-    
+    JSON.stringify(tmp + "<--");
   }
 
   handleClick() {
