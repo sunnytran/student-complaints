@@ -37,7 +37,6 @@ class Generate extends React.Component {
   setComplaint(e) {
     var tmp = e.target.value;
     this.setState({complaint : e.target.value});
-    JSON.stringify(tmp + "<--");
   }
 
   handleClick() {
@@ -61,7 +60,7 @@ class Generate extends React.Component {
             <TextInput label="Student name" setValue={this.setStudentName}></TextInput>
           </EmailStyledField>
           <EmailStyledField label="Subject:">
-            <Dropdown label="Complaint" list={this.state.complaintsData} setValue={this.setComplaint}></Dropdown>
+            <Dropdown label="Complaint" list={this.state.complaintsData} setValue={this.setComplaint} noValue={true}></Dropdown>
           </EmailStyledField>
 
           <TextArea label="Message" content="Please click generate in order to generate a message" disabled={true}></TextArea>

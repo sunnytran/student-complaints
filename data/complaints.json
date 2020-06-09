@@ -1,20 +1,20 @@
 [
     {
         "Complaint": "Racist remarks",
-        "Message-Body": {
-            "Value": "Racist remarks"
+        "Message-Components": {
+            
         }
     },
     {
         "Complaint": "Misconduct",
-        "Message-Body": {
-            "Value": "Misconduct"
+        "Message-Components": {
+            
         }
     },
     {
         "Complaint": "Sexual harassment",
-        "Message-Body": {
-            "Value": "Sexual harassment"
+        "Message-Components": {
+            
         }
     }
 ]
