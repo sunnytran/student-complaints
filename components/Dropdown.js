@@ -12,7 +12,7 @@ class Dropdown extends React.Component {
     render() {
         return (
           <div class="select is-fullwidth">
-            <select>
+            <select onChange={this.props.setValue}>
               <option value="" disabled selected>{this.props.label}</option>
               {
                 this.state.list.map(i => {

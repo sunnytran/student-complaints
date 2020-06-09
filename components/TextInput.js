@@ -8,7 +8,7 @@ class TextInput extends React.Component {
     render() {
         return (
             <div class="control">
-                <input class="input" type="text" placeholder={this.props.label}></input>
+                <input class="input" type="text" placeholder={this.props.label} onChange={this.props.setValue}></input>
             </div>
         );
     }

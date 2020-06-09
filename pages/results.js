@@ -1,6 +1,6 @@
 
 import Dropdown from '../components/Dropdown'
-import TextInput from '../components/TextInput'
+import TextCopyField from '../components/TextCopyField'
 import EmailStyledField from '../components/EmailStyledField';
 import TextArea from '../components/TextArea';
 
@@ -20,16 +20,16 @@ class Results extends React.Component {
 
   render() {
     return (
-      <div class="animate__animated animate__slideInRight">
+      <div>
         <EmailStyledField label="To:">
-          "List of schools"
+          <TextCopyField label="School"></TextCopyField>
         </EmailStyledField>
 
         <EmailStyledField label="About:">
-          "Student name"
+          <TextCopyField label="Student name"></TextCopyField>
         </EmailStyledField>
         <EmailStyledField label="Subject:">
-          "Complaint"
+          <TextCopyField label="Complaint"></TextCopyField>
         </EmailStyledField>
 
         <TextArea label="Message" content="Generated message goes here" disabled={true}></TextArea>

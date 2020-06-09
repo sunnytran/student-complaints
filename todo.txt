@@ -1,7 +1,8 @@
-Animation going left to right from generate to other class
 actually generate the data
 vertical center
 gradient background?
-make sure fields are filled out
-a copy button
+
 might need to go back to bulma messasge box, i don't like the font
+errors
+copy to clipboard
+a copy button for textarea
