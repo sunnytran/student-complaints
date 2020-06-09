@@ -37,12 +37,14 @@ class Generate extends React.Component {
   setComplaint(e) {
     var tmp = e.target.value;
     this.setState({complaint : e.target.value});
+    
   }
 
   handleClick() {
-    if (this.state.studentName.length > 20 || this.state.schoolName == "" || this.studentName == "") {
+    if (this.state.studentName == "" || this.state.studentName.length > 20 || this.state.schoolName == "" || this.studentName == "") {
       alert("INVALID");
     } else {
+      this.props.setValues(this.state.schoolName, this.state.studentName, this.state.complaint);
       this.props.togglePages();
     }
   }

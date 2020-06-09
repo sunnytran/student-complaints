@@ -9,14 +9,26 @@ class Index extends React.Component {
     super(props);
 
     this.state = {
-      isShowingResults: false
+      isShowingResults: false,
+      schoolName: "",
+      studentName: "",
+      complaint: ""
     }
 
     this.togglePages = this.togglePages.bind(this);
+    this.setValues = this.setValues.bind(this);
   }
 
   togglePages() {
     this.setState({ isShowingResults: !this.state.isShowingResults });
+  }
+
+  setValues(schoolName, studentName, complaint) {
+    this.setState({
+      schoolName: schoolName,
+      studentName: studentName,
+      complaint: complaint
+    });
   }
 
   render() {
@@ -40,8 +52,14 @@ class Index extends React.Component {
               </header>
               <div class="card-content">
                 <div class="content">
-                  { this.state.isShowingResults ? null : <Generate togglePages={this.togglePages}></Generate> }
-                  { this.state.isShowingResults ? <Results togglePages={this.togglePages}></Results> : null }
+                  { this.state.isShowingResults ? null : <Generate togglePages={this.togglePages} setValues={this.setValues}></Generate> }
+                  { this.state.isShowingResults ?
+                    <Results togglePages={this.togglePages} 
+                      schoolName={this.state.schoolName}
+                      studentName={this.state.studentName}
+                      complaint={this.state.complaint}>
+                    </Results> : null
+                  }
                 </div>
               </div>
             </div>

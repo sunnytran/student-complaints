@@ -22,14 +22,14 @@ class Results extends React.Component {
     return (
       <div>
         <EmailStyledField label="To:">
-          <TextCopyField label="School"></TextCopyField>
+          <TextCopyField label="School" value={this.props.schoolName}></TextCopyField>
         </EmailStyledField>
 
         <EmailStyledField label="About:">
-          <TextCopyField label="Student name"></TextCopyField>
+          <TextCopyField label="Student name" value={this.props.studentName}></TextCopyField>
         </EmailStyledField>
         <EmailStyledField label="Subject:">
-          <TextCopyField label="Complaint"></TextCopyField>
+          <TextCopyField label="Complaint" value={this.props.complaint}></TextCopyField>
         </EmailStyledField>
 
         <TextArea label="Message" content="Generated message goes here" disabled={true}></TextArea>

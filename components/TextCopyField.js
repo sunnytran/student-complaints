@@ -9,7 +9,7 @@ class TextCopyField extends React.Component {
         return (
             <div class="field has-addons">
                 <div class="control">
-                    <input class="input" type="text" placeholder="Test" disabled></input>
+                    <input class="input" type="text" placeholder={this.props.value} disabled></input>
                 </div>
                 <div class="control">
                     <a class="button is-grey-light">
