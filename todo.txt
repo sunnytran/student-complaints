@@ -1,8 +1,6 @@
 actually generate the data
 vertical center
 
-gradient background?
-
 might need to go back to bulma messasge box, i don't like the font
 
 errors notifcations

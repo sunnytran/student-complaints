@@ -41,8 +41,8 @@ class Generate extends React.Component {
   }
 
   setComplaint(e) {
-    var tmp = e.target.value;
-    this.setState({complaint : e.target.value});
+    const selectedIndex = event.target.options.selectedIndex;
+    this.setState({complaint : event.target.options[selectedIndex].getAttribute('data-key')});
   }
 
   handleClick() {
@@ -66,7 +66,7 @@ class Generate extends React.Component {
             <TextInput label="Student name" setValue={this.setStudentName}></TextInput>
           </EmailStyledField>
           <EmailStyledField label="Subject:">
-            <Dropdown label="Complaint" list={this.state.complaintsData} setValue={this.setComplaint} noValue={true}></Dropdown>
+            <Dropdown label="Complaint" list={this.state.complaintsData} setValue={this.setComplaint}></Dropdown>
           </EmailStyledField>
 
           <TextArea label="Message" content="Please click generate in order to generate a message" disabled={true}></TextArea>

@@ -17,8 +17,8 @@ class TextArea extends React.Component {
                   }
                 `}</style>
 
-                <textarea rows="10" disabled={this.props.disabled} value={this.props.content}>
-                </textarea>
+
+                <textarea class="textarea has-fixed-size" disabled={this.props.disabled} value={this.props.content}></textarea>
               </div>
           </div>
         );

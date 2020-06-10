@@ -3,9 +3,6 @@ import TextCopyField from '../components/TextCopyField'
 import EmailStyledField from '../components/EmailStyledField';
 import TextArea from '../components/TextArea';
 
-import schoolData from '../data/colleges.json';
-import complaintsData from '../data/complaints.json';
-
 class Results extends React.Component {
 
   constructor(props) {
