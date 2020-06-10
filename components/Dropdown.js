@@ -19,7 +19,7 @@ class Dropdown extends React.Component {
                   const keys = Object.keys(i);
 
                   return (
-                    <option key={i[keys[0]]} value={this.props.noValue ? i[keys[0]] : i[keys[1]]}>
+                    <option data-key={i[keys[0]]} value={this.props.noValue ? i[keys[0]] : i[keys[1]]}>
                       {i[keys[0]]}
                     </option>
                   );

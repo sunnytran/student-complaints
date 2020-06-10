@@ -11,6 +11,7 @@ class Index extends React.Component {
     this.state = {
       isShowingResults: false,
       schoolName: "",
+      schoolEmail: "",
       studentName: "",
       complaint: ""
     }
@@ -23,9 +24,10 @@ class Index extends React.Component {
     this.setState({ isShowingResults: !this.state.isShowingResults });
   }
 
-  setValues(schoolName, studentName, complaint) {
+  setValues(schoolName, schoolEmail, studentName, complaint) {
     this.setState({
       schoolName: schoolName,
+      schoolEmail: schoolEmail,
       studentName: studentName,
       complaint: complaint
     });
@@ -56,6 +58,7 @@ class Index extends React.Component {
                   { this.state.isShowingResults ?
                     <Results togglePages={this.togglePages} 
                       schoolName={this.state.schoolName}
+                      schoolEmail={this.state.schoolEmail}
                       studentName={this.state.studentName}
                       complaint={this.state.complaint}>
                     </Results> : null

@@ -26,7 +26,7 @@ class Results extends React.Component {
     return (
       <div>
         <EmailStyledField label="To:">
-          <TextCopyField label="School" value={this.props.schoolName}></TextCopyField>
+          <TextCopyField label="School" value={this.props.schoolEmail}></TextCopyField>
         </EmailStyledField>
 
         <EmailStyledField label="About:">

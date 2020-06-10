@@ -28,10 +28,12 @@ class Generate extends React.Component {
   }
 
   setSchoolEmail(e) {
-    var tmp = event.target.options.selectedIndex;
-    alert(e.target.options[tmp].getAttribute('key'));
+    const selectedIndex = event.target.options.selectedIndex;
     
-    this.setState({schoolEmail : e.target.value});
+    this.setState({
+      schoolName: event.target.options[selectedIndex].getAttribute('data-key'),
+      schoolEmail: e.target.value
+    });
   }
 
   setStudentName(e) {
@@ -47,7 +49,7 @@ class Generate extends React.Component {
     if (this.state.studentName == "" || this.state.studentName.length > 20 || this.state.schoolEmail == "" || this.studentName == "") {
       alert("INVALID");
     } else {
-      this.props.setValues(this.state.schoolEmail, this.state.studentName, this.state.complaint);
+      this.props.setValues(this.state.schoolName, this.state.schoolEmail, this.state.studentName, this.state.complaint);
       this.props.togglePages();
     }
   }
