@@ -10,8 +10,6 @@ class TextArea extends React.Component {
           <div class="field">
             <label class="label">{this.props.label}</label>
               <div class="control">
-
-
                 <textarea class="textarea has-fixed-size" disabled={this.props.disabled} value={this.props.content}></textarea>
               </div>
           </div>

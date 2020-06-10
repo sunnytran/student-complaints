@@ -1,11 +1,10 @@
-actually generate the data
-vertical center
-
-might need to go back to bulma messasge box, i don't like the font
 
 errors notifcations
-
 a copy button for textarea
 copy to clipboard generated message
-more emails
 copy notification
+
+actually generate the data
+more emails
+
+vertical center

@@ -9,6 +9,7 @@ class TextInput extends React.Component {
         return (
             <div class="control">
                 <input class="input" type="text" placeholder={this.props.label} onChange={this.props.setValue}></input>
+                
             </div>
         );
     }

@@ -46,7 +46,7 @@ class Generate extends React.Component {
   }
 
   handleClick() {
-    if (this.state.studentName == "" || this.state.studentName.length > 20 || this.state.schoolEmail == "" || this.studentName == "") {
+    if (this.state.studentName == "" || this.state.studentName.length > 20 || this.state.schoolEmail == "" || this.complaint == "") {
       alert("INVALID");
     } else {
       this.props.setValues(this.state.schoolName, this.state.schoolEmail, this.state.studentName, this.state.complaint);
@@ -58,14 +58,14 @@ class Generate extends React.Component {
     return (
       <div>
         <div>
-          <EmailStyledField label="To:">
+          <EmailStyledField errorMessage={"Please pick a school"} label="To:">
             <Dropdown label="School" list={this.state.schoolData} setValue={this.setSchoolEmail}></Dropdown>
           </EmailStyledField>
 
-          <EmailStyledField label="About:">
+          <EmailStyledField errorMessage={"Student name must be between 0 and 20 characters"} label="About:">
             <TextInput label="Student name" setValue={this.setStudentName}></TextInput>
           </EmailStyledField>
-          <EmailStyledField label="Subject:">
+          <EmailStyledField errorMessage={"Please pick a subject"} label="Subject:">
             <Dropdown label="Complaint" list={this.state.complaintsData} setValue={this.setComplaint}></Dropdown>
           </EmailStyledField>
 
