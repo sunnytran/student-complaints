@@ -46,11 +46,30 @@ class Generate extends React.Component {
   }
 
   handleClick() {
-    if (this.state.studentName == "" || this.state.studentName.length > 20 || this.state.schoolEmail == "" || this.complaint == "") {
+    var hasError = false;
+
+    if (this.state.schoolEmail == "") {
       this.refs.schoolDropdown.showError();
+      hasError = true;
+    }
+    else
+      this.refs.schoolDropdown.hideError();
+
+    if (this.state.studentName.length <= 0 || this.state.studentName.length > 20) {
       this.refs.studentNameField.showError();
+      hasError = true;
+    }
+    else
+      this.refs.studentNameField.hideError();
+
+    if (this.state.complaint == null) {
       this.refs.complaintDropdown.showError();
-    } else {
+      hasError = true;
+    }
+    else
+      this.refs.complaintDropdown.hideError();
+
+    if (!hasError) {
       this.props.setValues(this.state.schoolName, this.state.schoolEmail, this.state.studentName, this.state.complaint);
       this.props.togglePages();
     }

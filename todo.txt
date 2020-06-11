@@ -1,8 +1,6 @@
 
-errors notifcations
 a copy button for textarea
 copy to clipboard generated message
-copy notification
 
 actually generate the data
 more emails
