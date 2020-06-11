@@ -13,11 +13,11 @@ class EmailStyledField extends React.Component {
     }
 
     showError() {
-        this.state.isShowingError = true;
+        this.setState({ isShowingError: true });
     }
 
     hideError() {
-        this.state.isShowingError = false;
+        this.setState({ isShowingError: false });
     }
 
     render() {

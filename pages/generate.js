@@ -47,8 +47,6 @@ class Generate extends React.Component {
 
   handleClick() {
     if (this.state.studentName == "" || this.state.studentName.length > 20 || this.state.schoolEmail == "" || this.complaint == "") {
-      alert("INVALID");
-
       this.refs.schoolDropdown.showError();
       this.refs.studentNameField.showError();
       this.refs.complaintDropdown.showError();
