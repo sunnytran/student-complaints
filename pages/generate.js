@@ -48,6 +48,10 @@ class Generate extends React.Component {
   handleClick() {
     if (this.state.studentName == "" || this.state.studentName.length > 20 || this.state.schoolEmail == "" || this.complaint == "") {
       alert("INVALID");
+
+      this.refs.schoolDropdown.showError();
+      this.refs.studentNameField.showError();
+      this.refs.complaintDropdown.showError();
     } else {
       this.props.setValues(this.state.schoolName, this.state.schoolEmail, this.state.studentName, this.state.complaint);
       this.props.togglePages();
@@ -58,14 +62,14 @@ class Generate extends React.Component {
     return (
       <div>
         <div>
-          <EmailStyledField errorMessage={"Please pick a school"} label="To:">
+          <EmailStyledField ref="schoolDropdown" errorMessage={"Please pick a school"} label="To:">
             <Dropdown label="School" list={this.state.schoolData} setValue={this.setSchoolEmail}></Dropdown>
           </EmailStyledField>
 
-          <EmailStyledField errorMessage={"Student name must be between 0 and 20 characters"} label="About:">
+          <EmailStyledField ref="studentNameField" errorMessage={"Student name must be between 0 and 20 characters"} label="About:">
             <TextInput label="Student name" setValue={this.setStudentName}></TextInput>
           </EmailStyledField>
-          <EmailStyledField errorMessage={"Please pick a subject"} label="Subject:">
+          <EmailStyledField ref="complaintDropdown" errorMessage={"Please pick a subject"} label="Subject:">
             <Dropdown label="Complaint" list={this.state.complaintsData} setValue={this.setComplaint}></Dropdown>
           </EmailStyledField>
 
