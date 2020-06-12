@@ -2,19 +2,41 @@
     {
         "Complaint": "Racist remarks",
         "Message-Components": {
-            
-        }
-    },
-    {
-        "Complaint": "Misconduct",
-        "Message-Components": {
-            
+            "intro": [
+                "{NAME} is a student at {COLLEGE} that has been saying racist remarks.",
+                "I have recently come across evidence of {NAME}, a student at {COLLEGE} saying very untasteful things.",
+                "There is a student at your school named {NAME} that has said something that I found both offensive and racist."
+            ],
+            "body": [
+                "I speak on behalf of the students of {COLLEGE} that I find {NAME}'s comments the antithesis of {COLLEGE}'s core values.",
+                "I assure you that the student body and I do not tolerate any racism and do not appreciate {NAME}'s comments.",
+                "I would not find myself comfortable going to class with {NAME} knowing that they said the things they said."
+            ],
+            "conclusion": [
+                "I hope that the board of admissions at {COLLEGE} as well as the faculty and staff will side with us in regards to {NAME}'s comment.",
+                "I hope that you agree that what {NAME} said is not okay and that the faculty and staff at {COLLEGE} will do something about this.",
+                "The faculty and staff at {COLLEGE} should not let racist remarks like this slide because {NAME}'s comments have tarnished the values that {COLLEGE} has upheld for so long."
+            ]
         }
     },
     {
         "Complaint": "Sexual harassment",
         "Message-Components": {
-            
+            "intro": [
+                "I have learned that {NAME} at {COLLEGE} has been accused of sexual harassment.",
+                "I have recently come across evidence of {NAME}, a student at {COLLEGE} committing acts of sexual harassment.",
+                "There is a student at your school named {NAME} that has been caught sexually harassing others"
+            ],
+            "body": [
+                "I speak on behalf of the students of {COLLEGE} that I find {NAME}'s actions the antithesis of {COLLEGE}'s core values.",
+                "I assure you that the student body and I do not tolerate sexual harassment and do not appreciate {NAME}'s actions.",
+                "I would not find myself comfortable going to class with {NAME} knowing the things that they did"
+            ],
+            "conclusion": [
+                "I hope that the board of admissions at {COLLEGE} as well as the faculty and staff will side with us in regards to {NAME}'s things.",
+                "I hope that you agree that what {NAME} did is not okay and that the faculty and staff at {COLLEGE} will do something about this.",
+                "The faculty and staff at {COLLEGE} should not let sexual harassment like this slide because {NAME}'s comments have tarnished the values that {COLLEGE} has upheld for so long."
+            ]
         }
     }
 ]

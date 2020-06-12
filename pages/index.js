@@ -45,7 +45,6 @@ class Index extends React.Component {
 
         <div class="columns is-flex is-vcentered is-centered">
           <div class="column is-half">
-  
             <div class="card is-grey-lighter">
               <header class="card-header has-background-grey-dark">
                 <p class="card-header-title has-text-white">
@@ -66,9 +65,9 @@ class Index extends React.Component {
                 </div>
               </div>
             </div>
-  
           </div>
         </div>
+      
       </div>
     )
   }

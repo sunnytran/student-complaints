@@ -29,7 +29,7 @@ class Results extends React.Component {
           <TextCopyField label="Complaint" value={this.props.complaint}></TextCopyField>
         </EmailStyledField>
 
-        <TextArea content="Generated message goes here" disabled={true}></TextArea>
+        <TextArea content="Generated message goes here" disabled={true} hasCopy={true}></TextArea>
 
         <div class="buttons is-right">
           <button class="button is-link" onClick={this.handleClick}>

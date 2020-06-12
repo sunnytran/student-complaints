@@ -17,7 +17,7 @@ class TextArea extends React.Component {
     render() {
         return (
           <div class="field">
-            <b class="is-black">Message</b><span class="is-pulled-right"><a href="#" onClick={this.copyToClipboard}>Copy</a></span>
+            <b class="is-black">Message</b>{this.props.hasCopy ? <span class="is-pulled-right"><a href="#" onClick={this.copyToClipboard}>Copy</a></span> : null}
             <div class="control">
               <textarea ref={this.areaValueRef} class="textarea has-fixed-size" value={this.props.content}></textarea>
             </div>
