@@ -75,18 +75,13 @@ class Generate extends React.Component {
       }
     }
 
+    if (this.state.studentName.endsWith("s"))
+      message = message.replace(/{NAME}'s/g, "{NAME}'");
+    if (this.state.schoolName.endsWith("s"))
+      message = message.replace(/{COLLEGE}'s/g, "{COLLEGE}'");
+
     message = message.replace(/{NAME}/g, this.state.studentName);
     message = message.replace(/{COLLEGE}/g, this.state.schoolName);
-    if (this.state.studentName.endsWith("s")) {
-    {
-      var wrongPossessive = this.state.studentName + "'s";
-      var fixedPossessive = this.state.studentName + "'";
-      alert(wrongPossessive + " "+  fixedPossessive);
-      message = message.replace(/wrongPossessive/g, fixedPossessive);
-    }
-    }
-    if (this.state.schoolName.endsWith("s"))
-      message = message.replace(/(this.state.schoolName + "'s")/g, this.state.schoolName + "'");
 
     return message;
   }

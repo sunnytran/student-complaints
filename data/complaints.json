@@ -14,7 +14,7 @@
             ],
             "conclusion": [
                 "I hope that the board of admissions at {COLLEGE} as well as the faculty and staff will side with us in regards to {NAME}'s comment.",
-                "I hope that you agree that what {NAME} said is not okay and that the faculty and staff at {COLLEGE} will do something about this.",
+                "I hope that you agree that what {NAME} said is not okay and that the faculty and staff at {COLLEGE} should do something about this.",
                 "The faculty and staff at {COLLEGE} should not let racist remarks like this slide because {NAME}'s comments have tarnished the values that {COLLEGE} has upheld for so long."
             ]
         }
@@ -34,7 +34,7 @@
             ],
             "conclusion": [
                 "I hope that the board of admissions at {COLLEGE} as well as the faculty and staff will side with us in regards to {NAME}'s things.",
-                "I hope that you agree that what {NAME} did is not okay and that the faculty and staff at {COLLEGE} will do something about this.",
+                "I hope that you agree that what {NAME} did is not okay and that the faculty and staff at {COLLEGE} should do something about this.",
                 "The faculty and staff at {COLLEGE} should not let sexual harassment like this slide because {NAME}'s comments have tarnished the values that {COLLEGE} has upheld for so long."
             ]
         }
