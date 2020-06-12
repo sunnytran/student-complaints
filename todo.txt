@@ -1,6 +1,4 @@
 
-a copy button for textarea
-copy to clipboard generated message
 
 actually generate the data
 more emails

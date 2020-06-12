@@ -90,7 +90,6 @@ class Generate extends React.Component {
             <Dropdown label="Complaint" list={this.state.complaintsData} setValue={this.setComplaint}></Dropdown>
           </EmailStyledField>
 
-          <b class="is-black">Message</b>
           <TextArea content="Please click generate in order to generate a message" disabled={true}></TextArea>
 
           <div class="buttons is-right">
