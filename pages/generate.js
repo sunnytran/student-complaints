@@ -18,13 +18,15 @@ class Generate extends React.Component {
       schoolName: "",
       schoolEmail: "",
       studentName: "",
+      message: "",
       complaint: null
     }
 
-    this.handleClick = this.handleClick.bind(this);
     this.setSchoolEmail = this.setSchoolEmail.bind(this);
     this.setStudentName = this.setStudentName.bind(this);
     this.setComplaint = this.setComplaint.bind(this);
+    this.generateMessage = this.generateMessage.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   setSchoolEmail(e) {
@@ -55,6 +57,34 @@ class Generate extends React.Component {
     this.refs.complaintDropdown.hideError();
   }
 
+  generateMessage() {
+    var message = "";
+
+    for (var i = 0; i < complaintsData.length; i++) {
+      if (complaintsData[i]["Complaint"] == this.state.complaint) {
+        var components = complaintsData[i]["Message-Components"];
+
+        var intros = components["intro"];
+        message += intros[Math.floor(Math.random() * intros.length)] + " ";
+
+        var bodies = components["body"];
+        message += bodies[Math.floor(Math.random() * bodies.length)] + " ";
+
+        var conclusions = components["conclusion"];
+        message += conclusions[Math.floor(Math.random() * conclusions.length)];
+      }
+    }
+
+    message = message.replace("\{NAME\}", this.state.studentName, 'g');
+    message = message.replace("\{COLLEGE\}", this.state.schoolName, 'g');
+    if (this.state.studentName.endsWith("s"))
+      message = message.replace(this.state.studentName + "'s", this.state.studentName + "'", 'g');
+      if (this.state.schoolName.endsWith("s"))
+      message = message.replace(this.state.schoolName + "'s", this.state.schoolName + "'", 'g');
+
+    return message;
+  }
+
   handleClick() {
     var hasError = false;
 
@@ -80,7 +110,8 @@ class Generate extends React.Component {
       this.refs.complaintDropdown.hideError();
 
     if (!hasError) {
-      this.props.setValues(this.state.schoolName, this.state.schoolEmail, this.state.studentName, this.state.complaint);
+      this.state.message = this.generateMessage();
+      this.props.setValues(this.state.schoolName, this.state.schoolEmail, this.state.studentName, this.state.complaint, this.state.message);
       this.props.togglePages();
     }
   }

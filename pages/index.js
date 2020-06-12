@@ -13,7 +13,8 @@ class Index extends React.Component {
       schoolName: "",
       schoolEmail: "",
       studentName: "",
-      complaint: ""
+      complaint: "",
+      message: ""
     }
 
     this.togglePages = this.togglePages.bind(this);
@@ -24,12 +25,13 @@ class Index extends React.Component {
     this.setState({ isShowingResults: !this.state.isShowingResults });
   }
 
-  setValues(schoolName, schoolEmail, studentName, complaint) {
+  setValues(schoolName, schoolEmail, studentName, complaint, message) {
     this.setState({
       schoolName: schoolName,
       schoolEmail: schoolEmail,
       studentName: studentName,
-      complaint: complaint
+      complaint: complaint,
+      message: message
     });
   }
 
@@ -59,7 +61,8 @@ class Index extends React.Component {
                       schoolName={this.state.schoolName}
                       schoolEmail={this.state.schoolEmail}
                       studentName={this.state.studentName}
-                      complaint={this.state.complaint}>
+                      complaint={this.state.complaint}
+                      message={this.state.message}>
                     </Results> : null
                   }
                 </div>

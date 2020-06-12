@@ -4,7 +4,7 @@
         "Message-Components": {
             "intro": [
                 "{NAME} is a student at {COLLEGE} that has been saying racist remarks.",
-                "I have recently come across evidence of {NAME}, a student at {COLLEGE} saying very untasteful things.",
+                "I have recently come across evidence of {NAME}, a student at {COLLEGE} saying very distasteful things.",
                 "There is a student at your school named {NAME} that has said something that I found both offensive and racist."
             ],
             "body": [
