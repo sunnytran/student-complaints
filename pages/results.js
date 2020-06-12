@@ -8,8 +8,6 @@ class Results extends React.Component {
   constructor(props) {
     super(props);
 
-    this.areaValueRef = React.createRef();
-
     this.handleClick = this.handleClick.bind(this);
     this.copyToClipboard = this.copyToClipboard.bind(this);
   }
@@ -18,10 +16,9 @@ class Results extends React.Component {
     this.props.togglePages();
   }
 
-  copyToClipboard(e) {
-    this.areaValueRef.current.select();
-    document.execCommand('copy');
-}
+  copyToClipboard() {
+    this.refs.textAreaRef.copyToClipboard();
+  }
 
   render() {
     return (
@@ -38,7 +35,7 @@ class Results extends React.Component {
         </EmailStyledField>
 
         <b class="is-black">Message</b><span class="is-pulled-right"><a href="#" onClick={this.copyToClipboard}>Copy</a></span>
-        <TextArea content="Generated message goes here" disabled={true} ref={this.areaValueRef}></TextArea>
+        <TextArea content="Generated message goes here" ref="textAreaRef" disabled={true}></TextArea>
 
         <div class="buttons is-right">
           <button class="button is-link" onClick={this.handleClick}>
