@@ -34,15 +34,25 @@ class Generate extends React.Component {
       schoolName: event.target.options[selectedIndex].getAttribute('data-key'),
       schoolEmail: e.target.value
     });
+
+    this.refs.schoolDropdown.hideError();
   }
 
   setStudentName(e) {
-    this.setState({studentName : e.target.value});
+    var str = e.target.value;
+    if (str.length >= 0 && str.length <= 20)
+      this.refs.studentNameField.hideError();
+    else
+      this.refs.studentNameField.showError();
+
+    this.setState({studentName : str});
   }
 
   setComplaint(e) {
     const selectedIndex = event.target.options.selectedIndex;
     this.setState({complaint : event.target.options[selectedIndex].getAttribute('data-key')});
+
+    this.refs.complaintDropdown.hideError();
   }
 
   handleClick() {
@@ -83,7 +93,7 @@ class Generate extends React.Component {
             <Dropdown label="School" list={this.state.schoolData} setValue={this.setSchoolEmail}></Dropdown>
           </EmailStyledField>
 
-          <EmailStyledField ref="studentNameField" errorMessage={"Student name must be between 0 and 20 characters"} label="About:">
+          <EmailStyledField ref="studentNameField" errorMessage={"Student name must be between 1 and 20 characters"} label="About:">
             <TextInput label="Student name" setValue={this.setStudentName}></TextInput>
           </EmailStyledField>
           <EmailStyledField ref="complaintDropdown" errorMessage={"Please pick a subject"} label="Subject:">
